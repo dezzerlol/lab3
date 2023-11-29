@@ -1,0 +1,7 @@
+---
+- name: "Playbook to run tomcat9 with roles using dockerfile"
+  hosts: server
+  become: true
+  roles:
+    - common
+    - tomcat

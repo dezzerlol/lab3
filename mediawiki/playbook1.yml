@@ -1,0 +1,17 @@
+---
+- name: "Playbook to install mediawiki using Dockerfile"
+  hosts: server
+  become: true
+
+  tasks:
+  - name: "Copy docker compose file"
+    copy:
+      src: "docker-compose.yml"
+      dest: "IVT-CTKS-101M/docker-compose.yml"
+  
+  - name: "Start docker compose"
+    command: "docker compose up -d"
+    args:
+      chdir: "IVT-CTKS-101M/"
+    register: output
+  

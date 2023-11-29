@@ -1,0 +1,16 @@
+---
+- name: "Build docker image"
+  docker_image:
+    source: build
+    build:
+      path: IVT-CTKS-101M
+    name: tomcat9
+    tag: latest
+
+- name: "Run docker container"
+  docker_container:
+    name: tomcat9
+    image: tomcat9:latest
+    state: started
+    ports:
+      - "8080:8080"

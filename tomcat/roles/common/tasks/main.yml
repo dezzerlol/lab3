@@ -1,0 +1,20 @@
+---
+- name: "Copy dockerfile"
+  copy:
+    src: "Dockerfile"
+    dest: "IVT-CTKS-101M/Dockerfile"
+    
+- name: "Copy tomcat-users.xml"
+  copy:
+    src: "tomcat-users.xml"
+    dest: "IVT-CTKS-101M/tomcat-users.xml"
+
+- name: "Copy context.xml"
+  copy:
+    src: "context.xml"
+    dest: "IVT-CTKS-101M/context.xml"
+
+- name: "Copy war file"
+  copy:
+    src: "CreatePDF-1.4.war"
+    dest: "IVT-CTKS-101M/CreatePDF-1.4.war"
